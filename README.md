@@ -19,7 +19,7 @@ Este repositorio contiene ejercicios y actividades desarrollados para la materia
 
 1. Clona el repositorio:
 ```bash
-git clone <url-del-repositorio>
+git clone git@github.com:EdgarGmz/Desarrollo-para-Dispositivos-Inteligentes.git
 cd repos
 ```
 
