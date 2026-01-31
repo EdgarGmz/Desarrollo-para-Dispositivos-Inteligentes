@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Actividad4IDGS09A.MainPage">
+    
+    <!--Elementos-->
+    <StackLayout>
+        <Border
+            BackgroundColor="#2196F3"
+            Padding="24">
+            
+            <StackLayout>
+                <Label
+                    Text="App Convertidor de Medidas"
+                    HorizontalTextAlignment="Center"
+                    TextColor="White"
+                    FontSize="36"/>
+
+                <Entry
+                    Placeholder="Ingrese Valor A Convertir"
+                    x:Name="txtValor"
+                    Keyboard="Numeric"/>
+
+                <Label Text="Convertir de: "/>
+                
+                <!--Lista 1-->
+                <Picker
+                    Title="--- Seleccionar ---"
+                    x:Name="lista_01">
+                    <Picker.Items>
+                        <x:String>Centímetros</x:String>
+                        <x:String>Metros</x:String>
+                        <x:String>Kilómetros</x:String>                    
+                    </Picker.Items>
+                </Picker>
+                
+                <!--Lista 2-->
+                <Label Text="A: "/>
+
+                <Picker
+                Title="--- Seleccionar ---"
+                x:Name="lista_02">  
+                    <Picker.Items>
+                        <x:String>Centímetros</x:String>
+                        <x:String>Metros</x:String>
+                        <x:String>Kilómetros</x:String>
+                    </Picker.Items>
+                </Picker>
+                
+                <!--Botón-->
+                <Button
+                    Text="Convertir"
+                    x:Name="btnConvertir"
+                    Clicked="btnConvertir_Clicked"/>
+                
+                <!--Resultado-->
+                <Label
+                    Text="Resultado: "/>
+
+                <Label
+                    Text="-"
+                    x:Name="lblResultado"
+                    FontSize="Medium"/>
+            </StackLayout>
+        </Border>
+    </StackLayout>
+
+</ContentPage>
