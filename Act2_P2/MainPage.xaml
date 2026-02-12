@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Act2_P2.MainPage"
+             NavigationPage.HasNavigationBar="False">
+
+    <Grid>
+        <Image Source="https://images.unsplash.com/photo-1557683316-973673baf926" 
+               Aspect="AspectFill" />
+
+        <BoxView Color="#20000000" />
+
+        <VerticalStackLayout VerticalOptions="Center" 
+                             HorizontalOptions="Center"
+                             Spacing="20"
+                             Padding="30">
+
+            <Border StrokeThickness="1"
+                    Stroke="#40FFFFFF"
+                    Background="#30FFFFFF"
+                    Padding="40"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="25" />
+                </Border.StrokeShape>
+
+                <VerticalStackLayout Spacing="15" HorizontalOptions="Center">
+                    <Label x:Name="CounterLabel"
+                        
+                           FontSize="64"
+                           FontAttributes="Bold"
+                           TextColor="White"
+                           HorizontalOptions="Center" />
+
+                    <Label Text="TOTAL CLICKS"
+                           FontSize="12"
+                           CharacterSpacing="2"
+                           TextColor="#CCFFFFFF"
+                           HorizontalOptions="Center" />
+
+                    <Button x:Name="CounterBtn"
+                            Text="INCREMENTAR"
+                            Clicked="OnCounter_Clicked"
+                            BackgroundColor="#60FFFFFF"
+                            TextColor="White"
+                            FontAttributes="Bold"
+                            CornerRadius="15"
+                            HeightRequest="50"
+                            WidthRequest="250"
+                            Margin="0,20,0,0" />
+                </VerticalStackLayout>
+            </Border>
+
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>
