@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AppCamera3"
+             xmlns:components="clr-namespace:AppCamera3.Components"
+             x:Class="AppCamera3.MainPage">
+    <ScrollView>
+        <StackLayout>
+            <Label Text="Bienvenido a la aplicaci�n de c�mara" 
+                   VerticalOptions="CenterAndExpand" 
+                   HorizontalOptions="CenterAndExpand" />
+
+            <Button Text="Abrir C�mara" 
+                    x:Name="btnTomarFoto"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" 
+                    Clicked="btnTomarFoto_Clicked"/>
+
+            <Button Text="Obtener Galeria" 
+                    x:Name="btnObtenerGaleria"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" 
+                    Clicked="btnObtenerGaleria_Clicked"/>
+
+            <Image x:Name="imgFoto"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
