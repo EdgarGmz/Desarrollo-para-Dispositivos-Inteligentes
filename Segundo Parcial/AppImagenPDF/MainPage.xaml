@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AppImagenPDF"
+             xmlns:components="clr-namespace:AppImagenPDF.Components"
+             x:Class="AppImagenPDF.MainPage">
+
+    <VerticalStackLayout
+        Padding="20">
+
+        <Label
+            Text="Selecciona la imagen para generar el PDF"/>
+
+        <Image
+            x:Name="SelectedImage" 
+            HeightRequest="200"/>
+
+        <Button
+            Text="Seleccionar Imagen"
+            x:Name="btnSeleccionarImagen"
+            Clicked="btnSeleccionarImagen_Clicked"/>
+
+        <Button
+            Text="Generar PDF con Imagen"
+            x:Name="btnGenerarPDF"
+            Clicked="btnGenerarPDF_Clicked"/>
+
+    </VerticalStackLayout>
+
+   
+
+</ContentPage>
