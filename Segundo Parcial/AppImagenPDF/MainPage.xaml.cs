@@ -34,7 +34,7 @@
             }
         }
 
-        private async void btnGenerarPDF_Clicked(object sender, EventArgs e)
+        private async voidS btnGenerarPDF_Clicked(object sender, EventArgs e)
         {
             // Validar que hallamos seleccionado una imagen
             if (string.IsNullOrEmpty(imagePath))

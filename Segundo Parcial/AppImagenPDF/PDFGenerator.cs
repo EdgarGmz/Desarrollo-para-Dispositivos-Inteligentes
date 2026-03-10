@@ -18,7 +18,7 @@ namespace AppImagenPDF
             var document = Document.Create(container =>
             {
                 container.Page(page => 
-                {
+                {S
                     page.Margin(30);
                     page.Size(PageSizes.A4);
 

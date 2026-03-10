@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AppEventos"
+             xmlns:components="clr-namespace:AppEventos.Components"
+             x:Class="AppEventos.MainPage"
+             Title="Eventos Deportivos">
+
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#F8FAFC" Offset="0" />
+            <GradientStop Color="#EEF3F8" Offset="1" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <Grid
+        RowDefinitions="Auto,*"
+        ColumnDefinitions="*"
+        Padding="0,10,0,0">
+
+        <Border
+            Grid.Row="0"
+            Margin="16,8,16,10"
+            Padding="20,16"
+            StrokeThickness="0"
+            StrokeShape="RoundRectangle 24">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#1D4ED8" Offset="0" />
+                    <GradientStop Color="#0EA5E9" Offset="1" />
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid ColumnDefinitions="*,Auto" ColumnSpacing="12">
+                <VerticalStackLayout Spacing="4">
+                    <Label
+                        Text="Eventos"
+                        FontSize="30"
+                        FontFamily="OpenSansSemibold"
+                        TextColor="White" />
+                    <Label
+                        Text="Visualiza tus partidos favoritos"
+                        FontSize="14"
+                        FontFamily="OpenSansRegular"
+                        TextColor="#DBEAFE" />
+                </VerticalStackLayout>
+
+                <Border
+                    Grid.Column="1"
+                    VerticalOptions="Start"
+                    Padding="12,6"
+                    BackgroundColor="#33FFFFFF"
+                    StrokeThickness="0"
+                    StrokeShape="RoundRectangle 14">
+                    <Label
+                        Text="EN VIVO"
+                        FontSize="11"
+                        FontAttributes="Bold"
+                        TextColor="White" />
+                </Border>
+            </Grid>
+        </Border>
+
+        <CollectionView
+            Grid.Row="1"
+            x:Name="PartidosList"
+            Margin="16,4,16,16"
+            SelectionMode="Single"
+            SelectionChanged="PartidosList_SelectionChanged">
+
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="14" />
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.EmptyView>
+                <Border
+                    Padding="18"
+                    Stroke="#D8DEE6"
+                    StrokeShape="RoundRectangle 16"
+                    BackgroundColor="White">
+                    <Label
+                        Text="No hay partidos disponibles por ahora."
+                        HorizontalTextAlignment="Center"
+                        FontFamily="OpenSansRegular"
+                        TextColor="#64748B" />
+                </Border>
+            </CollectionView.EmptyView>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border
+                        Margin="0,2"
+                        Stroke="#DCE3EC"
+                        StrokeThickness="1"
+                        StrokeShape="RoundRectangle 22"
+                        BackgroundColor="White"
+                        Padding="0">
+                        <Border.Shadow>
+                            <Shadow
+                                Brush="#220F172A"
+                                Opacity="0.7"
+                                Offset="0,5"
+                                Radius="12" />
+                        </Border.Shadow>
+
+                        <Grid RowDefinitions="160,Auto">
+                            <Grid Grid.Row="0">
+                                <Image
+                                    Source="{Binding Miniatura}"
+                                    Aspect="AspectFill" />
+                                <BoxView
+                                    VerticalOptions="End"
+                                    HeightRequest="56"
+                                    Color="#40000000" />
+                                <Label
+                                    Margin="12,0,12,10"
+                                    VerticalOptions="End"
+                                    HorizontalOptions="Start"
+                                    Text="{Binding Liga}"
+                                    FontSize="12"
+                                    FontAttributes="Bold"
+                                    TextColor="White" />
+                            </Grid>
+
+                            <VerticalStackLayout
+                                Grid.Row="1"
+                                Padding="16,14,16,16"
+                                Spacing="10">
+                                <Label
+                                    Text="{Binding Titulo}"
+                                    FontSize="19"
+                                    FontFamily="OpenSansSemibold"
+                                    TextColor="#0F172A"
+                                    MaxLines="2"
+                                    LineBreakMode="TailTruncation" />
+
+                                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="8">
+                                    <Label
+                                        Text="Fecha"
+                                        FontSize="12"
+                                        FontFamily="OpenSansSemibold"
+                                        TextColor="#475569" />
+                                    <Label
+                                        Grid.Column="1"
+                                        Text="{Binding Fecha}"
+                                        FontSize="13"
+                                        FontFamily="OpenSansRegular"
+                                        TextColor="#1E293B" />
+                                </Grid>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+
+</ContentPage>
